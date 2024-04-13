@@ -1,8 +1,15 @@
 //Comienzo del trabajo
-import * as rls from"readline-sync";
 import * as fs from "fs";
 
 let products:string[] = new Array();
 let prices:number[] = new Array();
-prices[0]=13;
-prices[1]=13;
+
+function showPrice():void{
+    let total:number=0;
+    for (let i:number=0;i<prices.length;i++){
+        total+=prices[i]
+    }
+    console.log(`El total de su compra es $${total}`);
+}
+
+fs.writeFileSync("recibo.txt", showFromSmallestToLargest);
