@@ -1,10 +1,3 @@
-import * as rls from "readline-sync";
-import * as fs from "fs";
-
-
-
-let products:string[] = ["leche", "manteca", "cerveza"];
-let prices:number[] = [1000, 1354, 2560];
 
 
 function showFromSmallestToLargest():void{
