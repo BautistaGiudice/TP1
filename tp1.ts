@@ -21,39 +21,39 @@ let optionsMenu = function (): void {
   console.log("============================");
 };
 
-function menuSelector():void {
-  let askOption:any;
+function menuSelector(): void {
+  let askOption: any;
 
   while (true) {
     askOption = rls.question("Ingrese una de las siguientes opciones: ");
-  
+
     if (!askOption.trim()) {
       console.log("No ingresaste ningún valor, inténtalo de nuevo.");
     } else {
       if (isNaN(askOption) || askOption < 1 || askOption > 7) {
         console.log("Opción incorrecta, vuelve a intentarlo.");
       } else {
-        askOption = parseInt(askOption)
+        askOption = parseInt(askOption);
         break; // Salir del bucle si askOption es un número válido entre 1 y 7
       }
     }
   }
 
-  switch(askOption) {
+  switch (askOption) {
     case 1:
-        if (products.length == 7) {
-          console.log("¡Maximo de productos en la lista alcanzados!.")
-          console.log("")
-          break;
-        }
-      addProduct()
+      if (products.length == 7) {
+        console.log("¡Maximo de productos en la lista alcanzados!.");
+        console.log("");
+        break;
+      }
+      addProduct();
       break;
     case 4:
-      mostExpensiveProduct()
+      mostExpensiveProduct();
       break;
     case 7:
-      console.log("Finalizando programa...")
-      end = false
+      console.log("Finalizando programa...");
+      end = false;
       break;
   }
 }
@@ -80,23 +80,23 @@ function addProduct() {
 
 function mostExpensiveProduct() {
   let mostExpensive: number = 0;
-  let moreExpensivePrice:number = 0 
+  let moreExpensivePrice: number = 0;
 
   for (let i = 0; i < products.length; i++) {
     if (prices[i] > moreExpensivePrice) {
       mostExpensive = i;
-      moreExpensivePrice = prices[i]
+      moreExpensivePrice = prices[i];
     }
   }
 
-  console.log("")
-  console.log(`El producto mas caro es:`)
-  console.log(`- ${products[mostExpensive]}: ${prices[mostExpensive]}`)
-  console.log("")
+  console.log("");
+  console.log(`El producto mas caro es:`);
+  console.log(`- ${products[mostExpensive]}: ${prices[mostExpensive]}`);
+  console.log("");
 }
 
-while(end) {
-  optionsMenu()
-  console.log("")
-  menuSelector()
+while (end) {
+  optionsMenu();
+  console.log("");
+  menuSelector();
 }
