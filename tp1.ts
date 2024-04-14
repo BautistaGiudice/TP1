@@ -12,4 +12,7 @@ function showPrice():void{
     console.log(`El total de su compra es $${total}`);
 }
 
-fs.writeFileSync("recibo.txt", showFromSmallestToLargest);
+function generateRecipe():void{
+    fs.writeFileSync("recibo.txt", showFromSmallestToLargest);
+    console.log("Recibo guardado en recibo.txt")
+}
